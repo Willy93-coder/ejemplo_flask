@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de log in</title>
+</head>
+<body>
+    <h1>Página de login</h1>
+    <form method="post">
+        {{ form.hidden_tag() }}
+        <!-- Usuario -->
+        <div>
+            <label for="">Usuario</label>
+            {{ form.username }}
+            {% for error in form.username.errors %}
+                {{ error }}
+            {% endfor %}
+        </div>
+        <!-- Contraseña -->
+        <div>
+            <label for="">Contraseña</label>
+            {{ form.password }}
+            {% for error in form.password.errors %}
+                {{ error }}
+            {% endfor %}  
+        </div> 
+         <!-- Boton -->
+         <button>Enviar</button>
+    </form>
+</body>
+</html>
